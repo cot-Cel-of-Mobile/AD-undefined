@@ -49,9 +49,8 @@ export class DilationTimeStudyState extends TimeStudyState {
       // ID 6 is the reality unlock study
       if (!PlayerProgress.realityUnlocked()) {
         Modal.message.show(`Reality Machine gain for your first Reality is reduced above ${format("1e6000")} Eternity
-          Points and capped at ${format("1e8000")} Eternity Points. This is due to balance changes made in the Reality
-          update which affect the difficulty of reaching those amounts, such as the increased Time Dimension cost
-          scaling above ${format("1e6000")}.`, {}, 3);
+          Points and reduced even further above ${format("1e9000")} Eternity Points. This is due to "balanced" changes
+          made in the mod, generally allowing for much more progression than the base game.`, {}, 3);
         EventHub.dispatch(GAME_EVENT.REALITY_FIRST_UNLOCKED);
       }
       if (!Perk.autounlockReality.isBought) Tab.reality.glyphs.show();

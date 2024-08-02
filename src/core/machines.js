@@ -19,7 +19,10 @@ export const MachineHandler = {
   get uncappedRM() {
     let log10FinalEP = player.records.thisReality.maxEP.plus(gainedEternityPoints()).log10();
     if (!PlayerProgress.realityUnlocked()) {
-      if (log10FinalEP > 8000) log10FinalEP = 8000;
+      // Here we can change when pre-Reality RM is softcapped/hardcapped
+      // Original RM hardcap code:
+      // if (log10Final EP > 8000) log10FinalEP = 8000;
+      if (log10FinalEP > 9000) log10FinalEP -= (log10FinalEP - 9000) * 0.5;
       if (log10FinalEP > 6000) log10FinalEP -= (log10FinalEP - 6000) * 0.75;
     }
     let rmGain = DC.E3.pow(log10FinalEP / 4000 - 1);
