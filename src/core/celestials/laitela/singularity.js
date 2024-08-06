@@ -213,10 +213,10 @@ const SingularityMilestoneThresholds = (function() {
     .filter(n => n < 1e100)
     .sort((a, b) => a - b);
 }());
-
+// Singularities usually require 200 base DE, but I reduced it to 10
 export const Singularity = {
   get cap() {
-    return 200 * Math.pow(10, player.celestials.laitela.singularityCapIncreases);
+    return 10 * Math.pow(10, player.celestials.laitela.singularityCapIncreases);
   },
 
   get gainPerCapIncrease() {

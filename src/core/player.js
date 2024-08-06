@@ -359,7 +359,8 @@ window.player = {
     previousRuns: {}
   },
   IPMultPurchases: 0,
-  version: 25,
+  // Current game's version (as of 8/06/2024) is v25
+  version: 50,
   infinityPower: DC.D1,
   postC4Tier: 0,
   eternityPoints: DC.D0,

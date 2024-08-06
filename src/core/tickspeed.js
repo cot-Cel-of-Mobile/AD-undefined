@@ -213,7 +213,7 @@ export const FreeTickspeed = {
   },
 
   fromShards(shards) {
-    const tickmult = (1 + (Effects.min(1.33, TimeStudy(171)) - 1) *
+    const tickmult = ((1 + (Effects.min(1.33, TimeStudy(171)) - 1) - Achievement(123).effectOrDefault(0)) *
       Math.max(getAdjustedGlyphEffect("cursedtickspeed"), 1));
     const logTickmult = Math.log(tickmult);
     const logShards = shards.ln();

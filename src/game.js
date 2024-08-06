@@ -118,7 +118,7 @@ export function gainedInfinityPoints() {
 
   return ip.floor();
 }
-
+// Eternity Point multipliers
 function totalEPMult() {
   return Pelle.isDisabled("EPMults")
     ? Pelle.specialGlyphEffect.time.timesEffectOf(PelleRifts.vacuum.milestones[2])
@@ -126,6 +126,7 @@ function totalEPMult() {
       .times(ShopPurchase.EPPurchases.currentMult)
       .timesEffectsOf(
         EternityUpgrade.epMult,
+        Achievement(127),
         TimeStudy(61),
         TimeStudy(122),
         TimeStudy(121),
@@ -1084,7 +1085,7 @@ export function browserCheck() {
 
 export function init() {
   // eslint-disable-next-line no-console
-  console.log("🌌 Antimatter Dimensions: Reality Update 🌌");
+  console.log("🌌 Antimatter Dimensions: undefined Update 🌌");
   if (DEV) {
     // eslint-disable-next-line no-console
     console.log("👨‍💻 Development Mode 👩‍💻");

@@ -194,7 +194,8 @@ export const normalAchievements = [
         ? `Be offline for a period of over ${formatInt(6)} hours (real time).`
         : `Be offline for a period of over ${formatInt(6)} hours.`;
     },
-    checkRequirement: () => Date.now() - player.lastUpdate >= 21600000,
+    checkRequirement: () => true,
+//  checkRequirement: () => Date.now() - player.lastUpdate >= 21600000,
     checkEvent: GAME_EVENT.GAME_TICK_BEFORE
   },
   {
@@ -536,7 +537,8 @@ export const normalAchievements = [
     id: 76,
     name: "One for each dimension",
     get description() { return `Play for ${formatInt(8)} days.`; },
-    checkRequirement: () => Time.totalTimePlayed.totalDays >= 8,
+//  checkRequirement: () => Time.totalTimePlayed.totalDays >= 8,
+    checkRequirement: () => true,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     reward: "Extremely small multiplier to Antimatter Dimensions based on time played.",
     effect: () => Math.max(Math.pow(Time.totalTimePlayed.totalDays / 2, 0.05), 1),
@@ -575,7 +577,7 @@ export const normalAchievements = [
     get description() { return `Complete all ${formatInt(8)} Infinity Challenges.`; },
     checkRequirement: () => InfinityChallenges.completed.length === 8,
     checkEvent: [GAME_EVENT.INFINITY_CHALLENGE_COMPLETED, GAME_EVENT.REALITY_RESET_AFTER],
-    get reward() { return `Infinity Power conversion is improved by +0.1.`},
+    get reward() { return `Infinity Power conversion is improved by +${format(0.1, 0, 1)}.`},
     effect: 0.1
   },
   {
@@ -902,7 +904,7 @@ export const normalAchievements = [
     get description() { return `Complete ${formatInt(50)} unique Eternity Challenge tiers.`; },
     checkRequirement: () => EternityChallenges.completions >= 50,
     checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER,
-    get reward() { return `The free Tickspeed upgrade threshold is reduced by -0.03.`},
+    get reward() { return `The free Tickspeed upgrade threshold is reduced by -${format(0.03, 0, 2)}.`},
     effect: 0.03
   },
   {

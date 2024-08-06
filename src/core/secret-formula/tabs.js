@@ -108,6 +108,8 @@ export const tabs = [
         id: 2,
         hidable: true,
       },
+      // Multiplier breakdown tab commented out. Nobody will miss it anyways.
+/*
       {
         key: "multipliers",
         name: "Multiplier Breakdown",
@@ -117,6 +119,7 @@ export const tabs = [
         id: 3,
         hidable: true,
       },
+*/
       {
         key: "glyph sets",
         name: "Glyph Set Records",

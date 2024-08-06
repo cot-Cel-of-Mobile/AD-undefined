@@ -80,7 +80,7 @@ export class DarkMatterDimensionState extends DimensionState {
       .times(Laitela.darkMatterMult)
       .times(this.commonDarkMult)
       .times(Math.pow(this.powerDMPerAscension, this.ascensions))
-      .timesEffectsOf(SingularityMilestone.darkMatterMult, SingularityMilestone.multFromInfinitied)
+      .timesEffectsOf(SingularityMilestone.darkMatterMult, SingularityMilestone.multFromInfinitied, Achievement(176))
       .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5)));
   }
 
@@ -93,6 +93,7 @@ export class DarkMatterDimensionState extends DimensionState {
       .times(this.commonDarkMult)
       .times(Math.pow(POWER_DE_PER_ASCENSION, this.ascensions))
       .timesEffectsOf(
+        Achievement(176),
         SingularityMilestone.darkEnergyMult,
         SingularityMilestone.realityDEMultiplier,
         SingularityMilestone.multFromInfinitied
