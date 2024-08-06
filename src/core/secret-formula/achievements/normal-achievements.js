@@ -1276,7 +1276,7 @@ export const normalAchievements = [
   },
   {
     id: 166,
-    displayID: 169,
+    displayId: 169,
     name: "Nicenice.",
     get description() { return `Get a Glyph with level at least ${formatInt(6969)}.`; },
     checkRequirement: () => gainedGlyphLevel().actualLevel >= 6969,
