@@ -127,6 +127,7 @@ export function getDilationGainPerSecond() {
     .timesEffectsOf(
       DilationUpgrade.dtGain,
       Achievement(132),
+      Achievement(136),
       Achievement(137),
       RealityUpgrade(1),
       AlchemyResource.dilation,
@@ -149,11 +150,14 @@ export function tachyonGainMultiplier() {
     DilationUpgrade.tachyonGain,
     GlyphSacrifice.dilation,
     Achievement(132),
+    Achievement(136),
     RealityUpgrade(4),
     RealityUpgrade(8),
     RealityUpgrade(15)
   ).pow(pow);
 }
+
+// Might as well make r136 give 100x TP
 
 export function rewardTP() {
   Currency.tachyonParticles.bumpTo(getTP(player.records.thisEternity.maxAM, true));
@@ -215,7 +219,7 @@ export function getDilationTimeEstimate(goal) {
 
 export function dilatedValueOf(value) {
   const log10 = value.log10();
-  const dilationPenalty = 0.75 * Effects.product(DilationUpgrade.dilationPenalty);
+  const dilationPenalty = 0.75 * Effects.product(DilationUpgrade.dilationPenalty) * Achievement(161).effectOrDefault(1);
   return Decimal.pow10(Math.sign(log10) * Math.pow(Math.abs(log10), dilationPenalty));
 }
 

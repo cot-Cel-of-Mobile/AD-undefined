@@ -64,9 +64,9 @@ export const MachineHandler = {
     }
   },
 
-  // Time in seconds to reduce the missing amount by a factor of two
+  // Time in seconds to reduce the missing amount by a factor of two. Default is 60
   get scaleTimeForIM() {
-    return 60 / ImaginaryUpgrade(20).effectOrDefault(1);
+    return 15 / ImaginaryUpgrade(20).effectOrDefault(1);
   },
 
   gainedImaginaryMachines(diff) {

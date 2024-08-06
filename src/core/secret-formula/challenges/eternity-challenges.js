@@ -8,16 +8,16 @@ export const eternityChallenges = [
   {
     id: 1,
     description: "Time Dimensions are disabled.",
-    goal: DC.E1800,
+    goal: DC.E1200,
     goalIncrease: DC.E200,
     reward: {
       description: "Time Dimension multiplier based on time spent this Eternity",
       effect: completions =>
-        Decimal.pow(Math.max(player.records.thisEternity.time / 10, 0.9), 0.3 + (completions * 0.05)),
+        Decimal.pow(Math.max(player.records.thisEternity.time / 10, 0.9), 0.3 + (completions * 0.1)),
       formatEffect: value => formatX(value, 2, 1)
     },
     // These will get notation-formatted and scrambled between for the final goal
-    scrambleText: ["1e2600", "1e201600"],
+    scrambleText: ["1e2000", "1e201000"],
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const eternityChallenges = [
     reward: {
       description: "1st Infinity Dimension multiplier based on Infinity Power",
       effect: completions => Currency.infinityPower.value.pow(1.5 / (700 - completions * 100)).clampMin(1),
-      cap: DC.E100,
+      cap: DC.E200,
       formatEffect: value => formatX(value, 2, 1)
     }
   },
@@ -40,7 +40,7 @@ export const eternityChallenges = [
     goalIncrease: DC.E75,
     reward: {
       description: () => `Increase the multiplier for buying ${formatInt(10)} Antimatter Dimensions`,
-      effect: completions => completions * 0.72,
+      effect: completions => completions * 1,
       formatEffect: value => `+${format(value, 2, 2)}`
     }
   },
@@ -59,7 +59,7 @@ export const eternityChallenges = [
     reward: {
       description: "Infinity Dimension multiplier based on unspent IP",
       effect: completions => Currency.infinityPoints.value.pow(0.003 + completions * 0.002),
-      cap: DC.E200,
+      cap: DC.E400,
       formatEffect: value => formatX(value, 2, 1)
     }
   },
@@ -72,7 +72,7 @@ export const eternityChallenges = [
     goalIncrease: DC.E400,
     reward: {
       description: "Distant Galaxy cost scaling starts later",
-      effect: completions => completions * 5,
+      effect: completions => completions * 10,
       formatEffect: value => `${formatInt(value)} AG later`
     }
   },
@@ -102,8 +102,8 @@ export const eternityChallenges = [
     description:
       "1st Time Dimensions produce 8th Infinity Dimensions and 1st Infinity Dimensions produce " +
       "7th Antimatter Dimensions. Tickspeed also directly applies to Infinity and Time Dimensions.",
-    goal: DC.E2000,
-    pelleGoal: DC.E2700,
+    goal: DC.E1500,
+    pelleGoal: DC.E2350,
     goalIncrease: DC.E530,
     effect: () => TimeDimension(1).productionPerSecond,
     reward: {
@@ -118,7 +118,7 @@ export const eternityChallenges = [
       upgrades ${formatInt(40)} times. Infinity Dimension and Replicanti upgrade autobuyers are disabled.`,
     goal: DC.E1300,
     pelleGoal: DC.E2800,
-    goalIncrease: DC.E900,
+    goalIncrease: DC.E300,
     reward: {
       description: "Infinity Power strengthens Replicanti Galaxies",
       effect: completions => {
@@ -138,7 +138,7 @@ export const eternityChallenges = [
     reward: {
       description: "Infinity Dimension multiplier based on Time Shards",
       effect: completions => Currency.timeShards.value.pow(completions * 0.1).clampMin(1),
-      cap: DC.E400,
+      cap: DC.E1000,
       formatEffect: value => formatX(value, 2, 1)
     }
   },
@@ -150,8 +150,8 @@ export const eternityChallenges = [
       EternityChallenge(10).applyEffect(v => description += ` Currently: ${formatX(v, 2, 1)}`);
       return description;
     },
-    goal: DC.E3000,
-    pelleGoal: DC.E3200,
+    goal: DC.E2000,
+    pelleGoal: DC.E2400,
     goalIncrease: DC.E300,
     effect: () => Decimal.pow(Currency.infinitiesTotal.value, 950).clampMin(1).pow(TimeStudy(31).effectOrDefault(1)),
     reward: {
@@ -169,13 +169,14 @@ export const eternityChallenges = [
       }
     }
   },
+  // EC11 stinks, so I just made it free. You still have to do stuff in doomed EC11, but I also made it super easy there
   {
     id: 11,
     description: () => `all Dimension multipliers and powers are disabled except for the multipliers from
       Infinity Power and Dimension Boosts (to Antimatter Dimensions). ${specialInfinityGlyphDisabledEffectText()}`,
-    goal: DC.E450,
-    pelleGoal: DC.E11200,
-    goalIncrease: DC.E200,
+    goal: DC.E10,
+    pelleGoal: DC.E4000,
+    goalIncrease: DC.E10,
     pelleGoalIncrease: DC.E1400,
     reward: {
       description: "Further reduce Tickspeed cost multiplier growth",

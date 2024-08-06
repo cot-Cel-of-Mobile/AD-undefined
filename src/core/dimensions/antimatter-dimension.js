@@ -21,6 +21,7 @@ export function antimatterDimensionCommonMultiplier() {
     BreakInfinityUpgrade.slowestChallengeMult,
     InfinityUpgrade.totalTimeMult,
     InfinityUpgrade.thisInfinityTimeMult,
+    Achievement(11),
     Achievement(48),
     Achievement(56),
     Achievement(65),
@@ -151,6 +152,20 @@ function applyNDPowers(mult, tier) {
   }
   if (InfinityChallenge(4).isCompleted) {
     multiplier = multiplier.pow(InfinityChallenge(4).reward.effectValue);
+  }
+
+  if (tier === 1) {
+    multiplier = multiplier
+    .powEffectsOf(
+      Achievement(122)
+    );
+  }
+
+  if (tier === 8) {
+    multiplier = multiplier
+    .powEffectsOf(
+      Achievement(101)
+    );
   }
 
   multiplier = multiplier.pow(glyphPowMultiplier * glyphEffarigPowMultiplier * Ra.momentumValue);

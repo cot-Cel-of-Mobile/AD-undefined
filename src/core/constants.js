@@ -5,7 +5,7 @@ window.PRESTIGE_EVENT = {
   ETERNITY: 3,
   REALITY: 4,
 };
-
+// hi
 function deepFreeze(obj) {
   Object.keys(obj).forEach(prop => {
     const reference = obj[prop];
@@ -149,6 +149,7 @@ export const DC = deepFreeze({
   E4000:                new Decimal("1e4000"),
   E5000:                new Decimal("1e5000"),
   E6000:                new Decimal("1e6000"),
+  E7777:                new Decimal("1e7777"),
   E8000:                new Decimal("1e8000"),
   E9000:                new Decimal("1e9000"),
   E10000:               new Decimal("1e10000"),
@@ -159,6 +160,7 @@ export const DC = deepFreeze({
   E12000:               new Decimal("1e12000"),
   E13000:               new Decimal("1e13000"),
   E14000:               new Decimal("1e14000"),
+  E15000:               new Decimal("1e15000"),
   E16500:               new Decimal("1e16500"),
   E17500:               new Decimal("1e17500"),
   E18000:               new Decimal("1e18000"),
