@@ -30,7 +30,7 @@ export const pelleUpgrades = {
     id: "timeSpeedMult",
     description: "Gain a multiplier to game speed",
     cost: [20, 1e3, 30, 1e5],
-    effect: x => Decimal.pow(1.3, x),
+    effect: x => Decimal.pow(2, x),
     formatEffect: x => formatX(x, 2, 2),
     cap: 35
   }),
@@ -38,7 +38,7 @@ export const pelleUpgrades = {
     id: "glyphLevels",
     description: "Increase the Glyph level allowed in Pelle",
     cost: [30, 1e3, 25, 1e15],
-    effect: x => Math.floor(((3 * (x + 1)) - 2) ** 1.6),
+    effect: x => Math.floor(((3 * (x + 1)) - 2) ** 2),
     formatEffect: x => formatInt(x),
     cap: 26
   }),
@@ -46,7 +46,7 @@ export const pelleUpgrades = {
     id: "infConversion",
     description: "Increase Infinity Power conversion rate",
     cost: [40, 1e3, 20, 1e18],
-    effect: x => (x * 3.5) ** 0.37,
+    effect: x => (x * 3.5) ** 0.456,
     formatEffect: x => `+${format(x, 2, 2)}`,
     cap: 21
   }),
