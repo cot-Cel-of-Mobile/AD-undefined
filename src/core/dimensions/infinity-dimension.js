@@ -10,7 +10,8 @@ export function infinityDimensionCommonMultiplier() {
       Achievement(97),
       TimeStudy(82),
       TimeStudy(92),
-      TimeStudy(162),
+      // Replace 162 with 163
+      TimeStudy(163),
       InfinityChallenge(1).reward,
       InfinityChallenge(6).reward,
       EternityChallenge(4).reward,
@@ -156,8 +157,8 @@ class InfinityDimensionState extends DimensionState {
     if (tier === 1) {
       mult = mult.times(PelleRifts.decay.milestones[0].effectOrDefault(1));
     }
-
-
+// Un-comment code below once you add TS164
+    mult = mult.pow(TimeStudy(164).effectOrDefault(1));
     mult = mult.pow(getAdjustedGlyphEffect("infinitypow"));
     mult = mult.pow(getAdjustedGlyphEffect("effarigdimensions"));
     mult = mult.pow(getAdjustedGlyphEffect("curseddimensions"));

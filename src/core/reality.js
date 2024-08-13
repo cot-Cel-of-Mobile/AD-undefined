@@ -795,7 +795,7 @@ export function applyRUPG10() {
   player.dimensionBoosts = Math.max(4, player.dimensionBoosts);
   player.galaxies = Math.max(1, player.galaxies);
   player.break = true;
-  Currency.eternities.bumpTo(100);
+  Currency.eternities.bumpTo(1000);
   Replicanti.amount = Replicanti.amount.clampMin(1);
   Replicanti.unlock(true);
 

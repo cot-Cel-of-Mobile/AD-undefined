@@ -215,8 +215,8 @@ export const normalTimeStudies = [
     requirement: [82],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Infinity Dimension multiplier based on fastest Eternity time",
-    effect: () => DC.D2.pow(60 / Math.max(Time.bestEternity.totalSeconds, 2)),
-    cap: DC.C2P30,
+    effect: () => DC.D2.pow(60 / Math.max(Time.bestEternity.totalSeconds, 1)),
+    cap: DC.C2P60,
     formatEffect: value => formatX(value, 2, 1)
   },
   {
@@ -265,6 +265,16 @@ export const normalTimeStudies = [
       : `Make the Infinity Point formula better log(x)/${formatInt(308)} ➜ log(x)/${formatInt(285)}`),
     effect: 285
   },
+
+  {
+    id: 112,
+    cost: 5,
+    requirement: [111],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Nearly remove the cap to Replication chance upgrades`,
+    effect: 9999999999
+  },
+
   {
     id: 121,
     cost: 9,
@@ -397,8 +407,29 @@ export const normalTimeStudies = [
     description: () => `${formatX(1e4)} multiplier on all Time Dimensions`,
     effect: 1e4
   },
+
+  {
+    id: 152,
+    cost: 10,
+    requirement: [151],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Massively reduce the cost scaling of Replication chance upgrades (${formatX(1e15)} ➜ ${formatX(10)})`,
+    effect: 1e14
+  },
+
   {
     id: 161,
+    cost: 8,
+    requirement: [162],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Antimatter Dimensions gain a power based on Antimatter Galaxies`,
+    effect: () => 1 + player.galaxies / 5000,
+    formatEffect: value => formatPow(value, 0, 3),
+    cap: 1.07
+  },
+
+  {
+    id: 162,
     cost: 7,
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
@@ -406,20 +437,34 @@ export const normalTimeStudies = [
     effect: () => DC.E616
   },
   {
-    id: 162,
+    id: 163,
     cost: 7,
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `${formatX(1e11)} multiplier on all Infinity Dimensions`,
     effect: 1e11
   },
+
+  {
+    id: 164,
+    cost: 8,
+    requirement: [163],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Infinity Dimensions gain a power based on Replicanti Galaxies`,
+    effect: () => 1 + player.replicanti.galaxies / 18000,
+    formatEffect: value => formatPow(value, 0, 3),
+    cap: 1.01
+  },
+
+  // Apply r123 for TS171 if needed
   {
     id: 171,
     cost: 15,
     requirement: [161, 162],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Time Shard requirement for the next Tickspeed upgrade goes up slower
-      ${formatX(1.33, 0, 2)} ➜ ${formatX(1.25, 0, 2)}`,
+    description: () => (Achievement(123).canBeApplied ?
+      `Time Shard requirement for the next Tickspeed upgrade goes up slower ${formatX(1.30, 0, 2)} ➜ ${formatX(1.22, 0, 2)}` 
+    : `Time Shard requirement for the next Tickspeed upgrade goes up slower ${formatX(1.33, 0, 2)} ➜ ${formatX(1.25, 0, 2)}`),
     effect: () => TS171_MULTIPLIER
   },
   {
@@ -563,7 +608,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [226],
     description: "You gain extra Replicanti Galaxies based on Replicanti amount",
-    effect: () => Math.floor(Replicanti.amount.exponent / 1000),
+    effect: () => Math.floor(Replicanti.amount.exponent / 800),
     formatEffect: value => `+${formatInt(value)} RG`
   },
   {
@@ -574,7 +619,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [225],
     description: "You gain extra Replicanti Galaxies based on their max",
-    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 15),
+    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 12),
     formatEffect: value => `+${formatInt(value)} RG`
   },
   {
@@ -643,6 +688,20 @@ export const normalTimeStudies = [
     description: "Dimensional Sacrifice applies to 1st Antimatter Dimension",
     effect: () => Sacrifice.totalBoost,
   },
+
+  {
+    id: 241,
+    cost: 25000,
+    requirement: [() => player.dilation.studies.length > 0],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: "Time Dimensions gain a power based on Tachyon Galaxies",
+    // Softcaps at 250 TGs (^1.1), hardcaps at 10250 TGs (^1.2)
+    effect: () => 1 + Math.clampMax(player.dilation.totalTachyonGalaxies * 0.0004, 0.1) + 
+    Math.clampMin((player.dilation.totalTachyonGalaxies * 0.00001) - 0.0025, 0),
+    formatEffect: value => formatPow(value, 4, 5),
+    cap: 1.2
+  },
+
   // Note: These last 4 entries are the triad studies
   {
     id: 301,

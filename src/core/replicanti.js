@@ -341,11 +341,11 @@ export const ReplicantiUpgrade = {
     get baseCost() { return player.replicanti.chanceCost; }
     set baseCost(value) { player.replicanti.chanceCost = value; }
 
-    get costIncrease() { return 1e15; }
+    get costIncrease() { return 1e15 / TimeStudy(152).effectOrDefault(1); }
 
     get cap() {
-      // Chance never goes over 100%.
-      return 1;
+      // Chance never goes over 100%, increased to 1e12% with TS112
+      return 1 + TimeStudy(112).effectOrDefault(0);
     }
 
     get isCapped() {

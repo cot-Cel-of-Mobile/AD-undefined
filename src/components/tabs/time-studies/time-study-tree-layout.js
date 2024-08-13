@@ -1,6 +1,8 @@
 import { TimeStudyConnectionSetup } from "./TimeStudyConnection";
 import { TimeStudySetup } from "./TimeStudyButton";
 
+// IF YOU ADD NEW TIME STUDIES, ADD THEM IN THIS CODE
+
 class TimeStudyRow {
   constructor(layout, items, isWide) {
     this.layout = layout;
@@ -80,12 +82,12 @@ export class TimeStudyTreeLayout {
       normalRow(                      TS(81),  TS(82),  TS(83)                        ),
       normalRow(                      TS(91),  TS(92),  TS(93)                        ),
       normalRow(                      TS(101), TS(102), TS(103)                       ),
-      normalRow(                       EC(7),  TS(111),  null                         ),
+      normalRow(                       EC(7),  TS(111), TS(112)                       ),
       normalRow(                      TS(121), TS(122), TS(123)                       ),
       normalRow(               EC(6), TS(131), TS(132), TS(133), EC(8)                ),
       normalRow(                      TS(141), TS(142), TS(143)                       ),
-      normalRow(               null,   EC(9), TS(151),   null,   EC(4)                ),
-      normalRow(                          TS(161), TS(162)                            )
+      normalRow(               null,   EC(9),  TS(151), TS(152), EC(4)                ),
+      normalRow(                  TS(161), TS(162), TS(163), TS(164)                  )
     );
 
     if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_181 || type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62_181 ||
@@ -119,7 +121,7 @@ export class TimeStudyTreeLayout {
     this.rows.push(
       normalRow(    TS(231),          TS(232),          TS(233),          TS(234)     ),
       normalRow(              EC(11),                             EC(12)              ),
-      normalRow(                          TimeStudy.dilation                          ),
+      normalRow(                    null, TimeStudy.dilation, TS(241)                 ),
       normalRow(          TimeStudy.timeDimension(5), TimeStudy.timeDimension(6)      ),
       normalRow(          TimeStudy.timeDimension(7), TimeStudy.timeDimension(8)      ),
       normalRow(                          TimeStudy.reality                           )

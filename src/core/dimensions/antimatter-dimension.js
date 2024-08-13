@@ -34,7 +34,8 @@ export function antimatterDimensionCommonMultiplier() {
     Achievement(92),
     TimeStudy(91),
     TimeStudy(101),
-    TimeStudy(161),
+    // Replace 161 with 162
+    TimeStudy(162),
     TimeStudy(193),
     InfinityChallenge(3),
     InfinityChallenge(3).reward,
@@ -172,6 +173,8 @@ function applyNDPowers(mult, tier) {
 
   multiplier = multiplier
     .powEffectsOf(
+// Un-comment code below once you add TS161
+      TimeStudy(161),
       AntimatterDimension(tier).infinityUpgrade.chargedEffect,
       InfinityUpgrade.totalTimeMult.chargedEffect,
       InfinityUpgrade.thisInfinityTimeMult.chargedEffect,

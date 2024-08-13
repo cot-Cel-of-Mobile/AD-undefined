@@ -151,7 +151,7 @@ class RaPetState extends GameMechanicState {
   }
 
   get chunkUpgradeCost() {
-    return 5000 * Math.pow(25, this.data.chunkUpgrades);
+    return 5000 * Math.pow(10, this.data.chunkUpgrades);
   }
 
   get canBuyMemoryUpgrade() {

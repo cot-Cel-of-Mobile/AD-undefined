@@ -24,6 +24,8 @@ export class TimeStudyConnection {
   }
 }
 
+// ADD CUSTOM STUDIES HERE OR THINGS WILL BREAK (which is no bueno!)
+
 /**
  * @type {TimeStudyConnection[]}
  */
@@ -71,6 +73,7 @@ TimeStudy.allConnections = (function() {
     [TS(103), TS(111)],
 
     [TS(111), EC(7)],
+    [TS(111), TS(112)],
 
     [TS(111), TS(121)],
     [TS(111), TS(122)],
@@ -93,11 +96,16 @@ TimeStudy.allConnections = (function() {
 
     [TS(151), EC(9)],
 
-    [TS(151), TS(161)],
-    [TS(151), TS(162)],
+    [TS(151), TS(152)],
 
-    [TS(161), TS(171)],
+    [TS(151), TS(162)],
+    [TS(151), TS(163)],
+
+    [TS(162), TS(161)],
+    [TS(163), TS(164)],
+
     [TS(162), TS(171)],
+    [TS(163), TS(171)],
 
     [TS(171), EC(1)],
     [TS(171), EC(2)],
@@ -148,6 +156,8 @@ TimeStudy.allConnections = (function() {
 
     [EC(11), TimeStudy.dilation],
     [EC(12), TimeStudy.dilation],
+
+    [TimeStudy.dilation, TS(241)],
 
     [TimeStudy.dilation, TimeStudy.timeDimension(5)],
     [TimeStudy.timeDimension(5), TimeStudy.timeDimension(6)],

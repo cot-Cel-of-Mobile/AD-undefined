@@ -22,6 +22,7 @@ import { DC } from "../../constants";
  r158 gives 2x BH power (from 1.1x)
  r161 reduces the dilation penalty by another ^1.025
  r166 requires you to reality with a glyph level at least 6969 (instead of exactly 6969) and displays as r169
+ r168 gives 2x memories (from 1.1x)
  r171 is 3x better (i wanted it to be 6.66x total but i dont think formatX shows decimals)
  r175 makes momentum increase another 4x faster
  r176 gives 10x DM/DE
@@ -626,7 +627,7 @@ export const normalAchievements = [
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
       return `Infinities more than ${formatInt(5)} seconds long
-      give ${formatX(2500)} more Infinities.`;
+      give ${formatX(2500, 1, 1)} more Infinities.`;
     },
     effect: 2500,
     effectCondition: () => Time.thisInfinity.totalSeconds > 5
@@ -719,7 +720,7 @@ export const normalAchievements = [
     get description() { return `Get the sum of Infinity Challenge times under ${format(6.66, 2, 2)} seconds.`; },
     checkRequirement: () => Time.infinityChallengeSum.totalSeconds < 6.66,
     checkEvent: [GAME_EVENT.BIG_CRUNCH_AFTER, GAME_EVENT.REALITY_RESET_AFTER],
-    get reward() { return `Infinity Dimensions are ${formatX(6.66)} stronger.`},
+    get reward() { return `Infinity Dimensions are ${formatX(6.66, 0, 2)} stronger.`},
     effect: 6.66
   },
   {

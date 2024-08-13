@@ -219,6 +219,7 @@ export const Pelle = {
       replication: isActive("replication")
         ? 10 ** 53 ** Math.clampMax(PelleRifts.vacuum.percentage, 1.44345)
         : 1,
+        // Stupid fix to prevent replication speed becoming Infinite (it's not decimalized), which is pointless anyways
       dilation: isActive("dilation")
         ? Decimal.pow(player.dilation.totalTachyonGalaxies, 1.5).max(1)
         : DC.D1,
@@ -291,7 +292,7 @@ export const Pelle = {
     }
 
     const gain = (
-      (Math.log10(am + 2) + Math.log10(ip + 2) + Math.log10(ep + 2)) / 1.64
+      (Math.log10(am + 2) + Math.log10(ip + 2) + Math.log10(ep + 2)) / 1.5
     ) ** 7.5;
 
     return gain < 1 ? gain : Math.floor(gain - this.cel.remnants);
@@ -311,7 +312,7 @@ export const Pelle = {
 
   // Calculations assume this is in units of proportion per second (eg. 0.03 is 3% drain per second)
   get riftDrainPercent() {
-    return 0.03;
+    return 0.1;
   },
 
   get glyphMaxLevel() {
@@ -354,7 +355,8 @@ export const Pelle = {
     return zalgo(str, Math.floor(stage ** 2 * 7));
   },
 
-  endTabNames: "End Is Nigh Destruction Is Imminent Help Us Good Bye Forever".split(" "),
+  endTabNames: "one two three four five six seven eight nine ten eleven".split(" "),
+//  endTabNames: "End Is Nigh Destruction Is Imminent Help Us Good Bye Forever".split(" "),
 
   quotes: Quotes.pelle,
 };

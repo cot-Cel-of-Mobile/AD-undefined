@@ -212,6 +212,8 @@ class TimeDimensionState extends DimensionState {
     const bought = tier === 8 ? Math.clampMax(dim.bought, 1e8) : dim.bought;
     mult = mult.times(Decimal.pow(dim.powerMultiplier, bought));
 
+//  Un-comment code below once you add TS241
+    mult = mult.pow(TimeStudy(241).effectOrDefault(1));
     mult = mult.pow(getAdjustedGlyphEffect("timepow"));
     mult = mult.pow(getAdjustedGlyphEffect("effarigdimensions"));
     mult = mult.pow(getAdjustedGlyphEffect("curseddimensions"));

@@ -79,7 +79,7 @@ export const realityUpgrades = [
     canLock: true,
     lockEvent: "gain a Replicanti Galaxy",
     description: "Replicanti speed is multiplied based on Replicanti Galaxies",
-    effect: () => 1 + Replicanti.galaxies.total / 50,
+    effect: () => 1 + Replicanti.galaxies.total / 25,
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -93,7 +93,7 @@ export const realityUpgrades = [
     canLock: true,
     lockEvent: "gain another Antimatter Galaxy",
     description: "Infinity gain is boosted from Antimatter Galaxy count",
-    effect: () => 1 + player.galaxies / 30,
+    effect: () => 1 + player.galaxies / 10,
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -142,10 +142,10 @@ export const realityUpgrades = [
     canLock: true,
     lockEvent: "Eternity",
     bypassLock: () => Currency.infinityPoints.exponent >= 400,
-    description: () => `Start every Reality with ${formatInt(100)} Eternities (also applies to current Reality)`,
+    description: () => `Start every Reality with ${formatInt(1000)} Eternities (also applies to current Reality)`,
     automatorPoints: 15,
-    shortDescription: () => `Start with ${formatInt(100)} Eternities`,
-    effect: () => 100
+    shortDescription: () => `Start with ${formatInt(1000)} Eternities`,
+    effect: () => 1000
   },
   {
     name: "The Boundless Flow",
@@ -154,10 +154,10 @@ export const realityUpgrades = [
     requirement: () => `${format(Currency.infinitiesBanked.value, 2)}/${format(DC.E12)} Banked Infinities`,
     checkRequirement: () => Currency.infinitiesBanked.exponent >= 12,
     checkEvent: [GAME_EVENT.ETERNITY_RESET_AFTER, GAME_EVENT.REALITY_FIRST_UNLOCKED],
-    description: "Every second, gain 10% of the Infinities you would normally gain by Infinitying",
+    description: "Every second, gain 25% of the Infinities you would normally gain by Infinitying",
     automatorPoints: 5,
     shortDescription: () => `Continuous Infinity generation`,
-    effect: () => gainedInfinities().times(0.1),
+    effect: () => gainedInfinities().times(0.25),
     formatEffect: value => `${format(value)} per second`
   },
   {
@@ -233,8 +233,8 @@ export const realityUpgrades = [
     },
     checkRequirement: () => Glyphs.activeWithoutCompanion.countWhere(g => g.strength >= 1.5) === 4,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: "Improve the Glyph rarity formula",
-    effect: 1.3,
+    description: "Significantly improve the Glyph rarity formula",
+    effect: 1.5,
     formatCost: value => format(value, 1, 0)
   },
   {
@@ -252,8 +252,8 @@ export const realityUpgrades = [
     },
     checkRequirement: () => Glyphs.activeWithoutCompanion.countWhere(g => countValuesFromBitmask(g.effects) >= 2) === 4,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: () => `${formatPercents(0.5)} chance to get an additional effect on Glyphs`,
-    effect: 0.5,
+    description: () => `${formatPercents(0.75)} chance to get an additional effect on Glyphs`,
+    effect: 0.75,
     formatCost: value => format(value, 1, 0)
   },
   {
@@ -278,10 +278,10 @@ export const realityUpgrades = [
     name: "Scour to Empower",
     id: 19,
     cost: 1500,
-    requirement: () => `Have a total of ${formatInt(30)} or more Glyphs at once
+    requirement: () => `Have a total of ${formatInt(15)} or more Glyphs at once
       (You have ${formatInt(Glyphs.allGlyphs.countWhere(g => g.type !== "companion"))})`,
-    hasFailed: () => Glyphs.allGlyphs.countWhere(g => g.type !== "companion") < 30,
-    checkRequirement: () => Glyphs.allGlyphs.countWhere(g => g.type !== "companion") >= 30,
+    hasFailed: () => Glyphs.allGlyphs.countWhere(g => g.type !== "companion") < 15,
+    checkRequirement: () => Glyphs.allGlyphs.countWhere(g => g.type !== "companion") >= 15,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     description: "You can sacrifice Glyphs for permanent bonuses (Shift + click)",
     formatCost: value => format(value, 1, 0)
@@ -333,7 +333,7 @@ export const realityUpgrades = [
     checkRequirement: () => Time.thisReality.totalMinutes < 15,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     description: "Replicanti speed is boosted based on your fastest game-time Reality",
-    effect: () => 15 / Math.clamp(Time.bestReality.totalMinutes, 1 / 12, 15),
+    effect: () => 15 / Math.clamp(Time.bestReality.totalMinutes / 6, 1 / 12, 15),
     cap: 180,
     formatEffect: value => formatX(value, 2, 2)
   },
