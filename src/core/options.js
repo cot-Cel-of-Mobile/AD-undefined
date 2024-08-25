@@ -83,8 +83,8 @@ export function tryImportSecret(data) {
       SecretAchievement(37).unlock();
       return true;
     case 3:
-      if (player.records.fullGameCompletions > 0 || DEV) Speedrun.unlock();
-      else GameUI.notify.error("Complete the game at least once first!", 15000);
+      if (player.records.fullGameCompletions >= 0 || DEV) Speedrun.unlock();
+      else GameUI.notify.error("Complete the game at least once first! (this should not show anymore)", 15000);
       return true;
     default:
       return false;

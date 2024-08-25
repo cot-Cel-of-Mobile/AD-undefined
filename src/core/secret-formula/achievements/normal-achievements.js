@@ -176,7 +176,9 @@ export const normalAchievements = [
     name: "That's a lot of infinites",
     get description() { return `Reach Infinity ${formatInt(10)} times.`; },
     checkRequirement: () => Currency.infinities.gte(10),
-    checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER
+    checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
+    get reward() { return `Infinity Point gain is doubled.`},
+    effect: 2
   },
   {
     id: 34,
@@ -551,7 +553,7 @@ export const normalAchievements = [
     get description() { return `Reach ${format(1e6)} Infinity Power.`; },
     checkRequirement: () => Currency.infinityPower.exponent >= 6,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    get reward() { return `Double Infinity Power gain.`},
+    get reward() { return `Infinity Dimensions are ${formatX(2)} stronger.`},
     effect: 2
   },
   {
@@ -627,7 +629,7 @@ export const normalAchievements = [
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
       return `Infinities more than ${formatInt(5)} seconds long
-      give ${formatX(2500, 1, 1)} more Infinities.`;
+      give x${format(2500)} more Infinities.`;
     },
     effect: 2500,
     effectCondition: () => Time.thisInfinity.totalSeconds > 5
@@ -1241,7 +1243,7 @@ export const normalAchievements = [
     id: 162,
     name: "Reinstalled the game and rejoined the server",
     description: "Have every Time Study at once.",
-    checkRequirement: () => player.timestudy.studies.length >= 58,
+    checkRequirement: () => player.timestudy.studies.length >= 63,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   // Remember to change the 58 above to a higher number if you add more studies!!!
