@@ -63,7 +63,9 @@ export function buyStudiesUntil(id, ec = -1) {
   }
 
   // Explicitly purchase 111 here if it's included and stop if applicable, as it isn't covered by logic in either split.
+  // Thanks to Hexa and incremental_gamer for helping me fix the issue with TS112 refusing to be bought :blobheart:
   if (id >= 111) studyArray.push(111);
+  if (id >= 112) studyArray.push(112);
 
   const secondPreferredWarningShown = showSecondPreferredWarning(currTree);
 

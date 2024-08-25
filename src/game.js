@@ -102,7 +102,7 @@ export function gainedInfinityPoints() {
     ? Decimal.pow10(player.records.thisInfinity.maxAM.log10() / div - 0.75)
     : new Decimal(308 / div);
   if (Effarig.isRunning && Effarig.currentStage === EFFARIG_STAGES.ETERNITY) {
-    ip = ip.min(DC.E200);
+    ip = ip.min(DC.E250);
   }
   ip = ip.times(GameCache.totalIPMult.value);
   if (Teresa.isRunning) {

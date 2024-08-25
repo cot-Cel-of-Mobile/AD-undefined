@@ -73,11 +73,15 @@ TimeStudy.allConnections = (function() {
     [TS(103), TS(111)],
 
     [TS(111), EC(7)],
+    // TODO before release: make sure this properly connects!
+    [TS(103), TS(112)],
     [TS(111), TS(112)],
 
     [TS(111), TS(121)],
     [TS(111), TS(122)],
     [TS(111), TS(123)],
+
+    [TS(112), TS(123)],
 
     [TS(121), TS(131)],
     [TS(122), TS(132)],
@@ -94,9 +98,15 @@ TimeStudy.allConnections = (function() {
     [TS(143), TS(151)],
     [TS(143), EC(4)],
 
+    [TS(141), TS(161)],
+    [TS(143), TS(152)],
+
     [TS(151), EC(9)],
 
     [TS(151), TS(152)],
+
+    [TS(152), TS(163)],
+    [TS(152), TS(164)],
 
     [TS(151), TS(162)],
     [TS(151), TS(163)],

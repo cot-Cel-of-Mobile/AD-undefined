@@ -269,7 +269,8 @@ export const normalTimeStudies = [
   {
     id: 112,
     cost: 5,
-    requirement: [111],
+    // TS103 also connects to TS112. Test this before releasing the mod
+    requirement: [103, 111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Nearly remove the cap to Replication chance upgrades`,
     effect: 9999999999
@@ -308,7 +309,7 @@ export const normalTimeStudies = [
     id: 123,
     cost: 9,
     STCost: 2,
-    requirement: [111],
+    requirement: [111, 112],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [121, 122],
     description: "You gain more Eternity Points based on time spent this Eternity",
@@ -411,7 +412,7 @@ export const normalTimeStudies = [
   {
     id: 152,
     cost: 10,
-    requirement: [151],
+    requirement: [143, 151, 163, 164],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Massively reduce the cost scaling of Replication chance upgrades (${formatX(1e15)} ➜ ${formatX(10)})`,
     effect: 1e14
@@ -420,7 +421,7 @@ export const normalTimeStudies = [
   {
     id: 161,
     cost: 8,
-    requirement: [162],
+    requirement: [141, 162],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Antimatter Dimensions gain a power based on Antimatter Galaxies`,
     effect: () => 1 + player.galaxies / 5000,
@@ -431,7 +432,8 @@ export const normalTimeStudies = [
   {
     id: 162,
     cost: 7,
-    requirement: [151],
+    requirement: [151, 161, 171],
+    // I have no idea if this'll work, but it SHOULD be possible to buy TS162 with TS171 and without TS151
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `${formatX(DC.E616)} multiplier on all Antimatter Dimensions`,
     effect: () => DC.E616
@@ -439,7 +441,8 @@ export const normalTimeStudies = [
   {
     id: 163,
     cost: 7,
-    requirement: [151],
+    requirement: [151, 152, 164, 171],
+    // It WOULD'VE been kinda pointless to add TS152, but TS152 is connected to TS143 so you can get 161+ WITHOUT TS151
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `${formatX(1e11)} multiplier on all Infinity Dimensions`,
     effect: 1e11
@@ -448,7 +451,7 @@ export const normalTimeStudies = [
   {
     id: 164,
     cost: 8,
-    requirement: [163],
+    requirement: [152, 163],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Infinity Dimensions gain a power based on Replicanti Galaxies`,
     effect: () => 1 + player.replicanti.galaxies / 18000,
@@ -460,7 +463,7 @@ export const normalTimeStudies = [
   {
     id: 171,
     cost: 15,
-    requirement: [161, 162],
+    requirement: [162, 163],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => (Achievement(123).canBeApplied ?
       `Time Shard requirement for the next Tickspeed upgrade goes up slower ${formatX(1.30, 0, 2)} ➜ ${formatX(1.22, 0, 2)}` 

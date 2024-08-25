@@ -340,7 +340,7 @@ export const ReplicantiUpgrade = {
 
     get baseCost() { return player.replicanti.chanceCost; }
     set baseCost(value) { player.replicanti.chanceCost = value; }
-
+      // Cost scaling reduced to 10x with TS152, making chance (with TS112) cap at ~e1e13 IP
     get costIncrease() { return 1e15 / TimeStudy(152).effectOrDefault(1); }
 
     get cap() {

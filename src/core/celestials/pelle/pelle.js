@@ -355,8 +355,9 @@ export const Pelle = {
     return zalgo(str, Math.floor(stage ** 2 * 7));
   },
 
-  endTabNames: "one two three four five six seven eight nine ten eleven".split(" "),
-//  endTabNames: "End Is Nigh Destruction Is Imminent Help Us Good Bye Forever".split(" "),
+//  why did i even add this other endTabNames line :bigblobthink:
+//  endTabNames: "one two three four five six seven eight nine ten eleven".split(" "),
+  endTabNames: "End Is Nigh Destruction Is Imminent Help Us Good Bye Forever".split(" "),
 
   quotes: Quotes.pelle,
 };
