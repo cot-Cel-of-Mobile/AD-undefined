@@ -629,7 +629,7 @@ export const normalAchievements = [
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
       return `Infinities more than ${formatInt(5)} seconds long
-      give x${format(2500)} more Infinities.`;
+      give x${formatInt(2500)} more Infinities.`;
     },
     effect: 2500,
     effectCondition: () => Time.thisInfinity.totalSeconds > 5
