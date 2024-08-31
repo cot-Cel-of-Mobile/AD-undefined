@@ -454,9 +454,10 @@ export const normalTimeStudies = [
     requirement: [152, 163],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Infinity Dimensions gain a power based on Replicanti Galaxies`,
-    effect: () => 1 + player.replicanti.galaxies / 18000,
+    // Major TS164 buff: scales 6x faster and cap is at ^1.05 instead of ^1.01. It was stupid for me to cap it so low anyways...
+    effect: () => 1 + player.replicanti.galaxies / 3000,
     formatEffect: value => formatPow(value, 0, 3),
-    cap: 1.01
+    cap: 1.05
   },
 
   // Apply r123 for TS171 if needed
@@ -699,8 +700,9 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Time Dimensions gain a power based on Tachyon Galaxies",
     // Softcaps at 250 TGs (^1.1), hardcaps at 10250 TGs (^1.2)
-    effect: () => 1 + Math.clampMax(player.dilation.totalTachyonGalaxies * 0.0004, 0.1) + 
-    Math.clampMin((player.dilation.totalTachyonGalaxies * 0.00001) - 0.0025, 0),
+    // Figured I would rewrite the display for the division factors, this just makes it so the code looks cleaner
+    effect: () => 1 + Math.clampMax(player.dilation.totalTachyonGalaxies / 2500, 0.1) + 
+    Math.clampMin((player.dilation.totalTachyonGalaxies / 100000) - 0.0025, 0),
     formatEffect: value => formatPow(value, 4, 5),
     cap: 1.2
   },

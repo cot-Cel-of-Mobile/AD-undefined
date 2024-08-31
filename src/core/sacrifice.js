@@ -20,7 +20,9 @@ export class Sacrifice {
     if (AntimatterDimension(8).totalAmount.eq(0)) return "No 8th Antimatter Dimensions";
     if (this.nextBoost.lte(1)) return `${formatX(1)} multiplier`;
     if (Player.isInAntimatterChallenge) return "Challenge goal reached";
-    return "Need to Crunch";
+    if (Currency.antimatter.gt(Player.infinityLimit)) return "Reached Infinity limit";
+    if (Enslaved.isRunning) return "Nameless Reality";
+    return `Unknown condition, pls fix \uE010`;
   }
 
   static getSacrificeDescription(changes) {
