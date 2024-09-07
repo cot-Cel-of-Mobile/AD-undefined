@@ -95,7 +95,8 @@ export const normalTimeStudies = [
     cost: 2,
     requirement: [22],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "You keep half of your Replicanti Galaxies on Infinity"
+    description: "Replicanti Galaxies no longer reset on Infinity"
+    // I'm going to make this keep all RGs when you crunch, though I need to make sure it doesn't break and give 1 extra RG
   },
   {
     id: 41,
