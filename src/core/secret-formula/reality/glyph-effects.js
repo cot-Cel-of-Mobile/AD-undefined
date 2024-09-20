@@ -292,10 +292,12 @@ export const glyphEffects = {
     bitmaskIndex: 13,
     isGenerated: true,
     glyphTypes: ["infinity"],
-    singleDesc: () => `Infinity Power conversion rate: \n^${formatInt(7)}
-      ➜ ^(${formatInt(7)} + {value})`,
-    totalDesc: () => `Infinity Power conversion rate: ^${formatInt(7)}
-      ➜ ^(${formatInt(7)} + {value})`,
+    singleDesc: () => Achievement(82).isUnlocked ?
+      `Infinity Power conversion rate: \n^${format(7.1, 0, 1)} ➜ ^(${format(7.1, 0, 1)} + {value})`
+    : `Infinity Power conversion rate: \n^${formatInt(7)} ➜ ^(${formatInt(7)} + {value})`,
+    totalDesc: () =>  Achievement(82).isUnlocked ? 
+      `Infinity Power conversion rate: ^${format(7.1, 0, 1)} ➜ ^(${format(7.1, 0, 1)} + {value})`
+    : `Infinity Power conversion rate: ^${formatInt(7)} ➜ ^(${formatInt(7)} + {value})`,
     genericDesc: "Infinity Power conversion rate",
     shortDesc: "Infinity Power conversion +{value}",
     effect: (level, strength) => Math.pow(level, 0.2) * Math.pow(strength, 0.4) * 0.04,

@@ -1,9 +1,12 @@
 import { DC } from "../../constants";
 /* ACHIEVEMENT CHANGES:
  r11 gives a 100x AD mult
+ r25 gives 1.01x dimboost power
+ r33 gives 2x IP
  r51 gives 4x IP
- r77 gives 2x Infinity Power
+ r77 gives a 2x ID mult
  r82 gives +0.1 Infinity Power conversion
+ r85 also gives 4x pre-cap Replicanti speed
  r87 is 10x stronger
  r97 gives a 6.66x ID mult
  r101 gives a ^1.001 AD8 power
@@ -23,7 +26,7 @@ import { DC } from "../../constants";
  r161 reduces the dilation penalty by another ^1.025
  r166 requires you to reality with a glyph level at least 6969 (instead of exactly 6969) and displays as r169
  r168 gives 2x memories (from 1.1x)
- r171 is 3x better (i wanted it to be 6.66x total but i dont think formatX shows decimals)
+ r171 is 3.33x better
  r175 makes momentum increase another 4x faster
  r176 gives 10x DM/DE
 */
@@ -122,7 +125,9 @@ export const normalAchievements = [
     name: "Boosting to the max",
     get description() { return `Buy ${formatInt(10)} Dimension Boosts.`; },
     checkRequirement: () => DimBoost.purchasedBoosts >= 10,
-    checkEvent: GAME_EVENT.DIMBOOST_AFTER
+    checkEvent: GAME_EVENT.DIMBOOST_AFTER,
+    get reward() { return `Dimension Boosts are ${formatPercents(0.01)} stronger.`},
+    effect: 1.01
   },
   {
     id: 26,
@@ -609,7 +614,7 @@ export const normalAchievements = [
     get description() { return `Big Crunch for ${format(DC.E150)} Infinity Points.`; },
     checkRequirement: () => gainedInfinityPoints().exponent >= 150,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
-    get reward() { return `Additional ${formatX(4)} multiplier to Infinity Points.`; },
+    get reward() { return `Additional ${formatX(4)} multiplier to Infinity Points and Replicanti speed below ${format(replicantiCap(), 1)} Replicanti.`; },
     effect: 4
   },
   {

@@ -8,9 +8,10 @@ export const infinityChallenges = [
     goal: DC.E650,
     isQuickResettable: true,
     reward: {
-      description: () => `${formatX(1.3, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
-      effect: () => Math.pow(1.3, InfinityChallenges.completed.length),
+      description: () => `${formatX(2, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
+      effect: () => Math.pow(2, InfinityChallenges.completed.length),
       formatEffect: value => formatX(value, 1, 1)
+      // 2x may be a little unbalanced, but isn't that a good thing for the mod?
     },
     unlockAM: DC.E2000,
   },
@@ -54,8 +55,9 @@ export const infinityChallenges = [
     isQuickResettable: true,
     effect: 0.25,
     reward: {
-      description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.05, 2, 2)}`,
-      effect: 1.05
+      description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.1, 2, 2)}`,
+      effect: 1.1
+      // IC4 has been restored to its former glory (the Eternity update nerfed it from ^1.1 to ^1.05).
     },
     unlockAM: DC.E12000,
   },

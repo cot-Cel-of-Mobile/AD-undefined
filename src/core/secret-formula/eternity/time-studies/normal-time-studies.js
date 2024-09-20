@@ -112,25 +112,26 @@ export const normalTimeStudies = [
     cost: 6,
     requirement: [32],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Antimatter Galaxy requirement increases by ${formatInt(52)}
+    description: () => `Antimatter Galaxy requirement increases by ${formatInt(50)}
       8th Dimensions instead of ${formatInt(60)}`,
-    effect: 52
+    effect: 50
+    // This is a potentially dangerous buff to give, but WYXkk suggested to make early eternity faster
   },
   {
     id: 51,
     cost: 3,
     requirement: [41, 42],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `You gain ${formatX(1e15)} more Infinity Points`,
-    effect: 1e15
+    description: () => `You gain ${formatX(1e25)} more Infinity Points`,
+    effect: 1e25
   },
   {
     id: 61,
     cost: 3,
     requirement: [51],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `You gain ${formatX(15)} more Eternity Points`,
-    effect: 15
+    description: () => `You gain ${formatX(150)} more Eternity Points`,
+    effect: 150
   },
   {
     id: 62,
@@ -406,8 +407,8 @@ export const normalTimeStudies = [
     cost: 8,
     requirement: [141, 142, 143],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `${formatX(1e4)} multiplier on all Time Dimensions`,
-    effect: 1e4
+    description: () => `${formatX(1e8)} multiplier on all Time Dimensions`,
+    effect: 1e8
   },
 
   {

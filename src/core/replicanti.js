@@ -134,10 +134,13 @@ export function totalReplicantiSpeedMult(overCap) {
   totalMult = totalMult.times(PelleRifts.decay.effectValue);
   totalMult = totalMult.times(Pelle.specialGlyphEffect.replication);
   totalMult = totalMult.times(ShopPurchase.replicantiPurchases.currentMult);
+  totalMult = totalMult.times(Achievement(136).effectOrDefault(1));
+  // Normally this 4th one isn't here, but I really don't care since I'm already throwing balance out of the window.
+  // It also makes Pelle somewhat faster, which is cool
   if (Pelle.isDisabled("replicantiIntervalMult")) return totalMult;
 
   const preCelestialEffects = Effects.product(
-    Achievement(136),
+  //  Achievement(136),
     TimeStudy(62),
     TimeStudy(213),
     RealityUpgrade(2),
@@ -147,6 +150,11 @@ export function totalReplicantiSpeedMult(overCap) {
   totalMult = totalMult.times(preCelestialEffects);
   if (TimeStudy(132).isBought) {
     totalMult = totalMult.times(Perk.studyPassive.isBought ? 3 : 1.5);
+  }
+
+  // This is an added bonus to r85 (crunch for 1e150 IP, get 4x IP gain as a reward)
+  if (!overCap && Achievement(85).isUnlocked) {
+    totalMult = totalMult.times(4);
   }
 
   if (!overCap && Achievement(134).isUnlocked) {
