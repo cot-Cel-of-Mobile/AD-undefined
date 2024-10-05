@@ -26,7 +26,7 @@ Most changes will be listed, however code cleanup will (mostly) remain unmention
 <sub>Recent changes are those made after August 2024.</sub>
 <br>
 <ul>
-<li>Added a new Secret Achievement - try defying the game's lies!</li>
+<li>Added a new Secret Achievement - try defying the game!</li>
 <li>Cleaned up a lot of code</li>
 <li><b>Added 2 new Achievement rewards:</b></li>
 <li>Achievement 25 makes Dimension Boosts 1% stronger.</li>
