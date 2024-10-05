@@ -8,6 +8,183 @@ export const changelog = [
    *  @property {function: @return String} info  Text body of information for the entry.
    * }
    */
+
+  {
+    date: [2024, 10, 4],
+    name: "undefined",
+    info: `
+At long last, a changelog entry has been added to the mod!
+<br>
+Most changes will be listed, however code cleanup will (mostly) remain unmentioned.
+<br>
+<br>
+<b><i>Once again, thank you for playing Antimatter Dimensions (and this mod)!</i></b>
+<br>
+<br>
+<b>Most recent changes:</b><br>
+<br>
+<sub>Recent changes are those made after August 2024.</sub>
+<br>
+<ul>
+<li>Added a new Secret Achievement - try defying the game's lies!</li>
+<li>Cleaned up a lot of code</li>
+<li><b>Added 2 new Achievement rewards:</b></li>
+<li>Achievement 25 makes Dimension Boosts 1% stronger.</li>
+<li>Achievement 85 makes Replicanti speed 4x faster before the cap.</li>
+<li><b>Infinity Challenge Changes:</b></li>
+<li>Infinity Challenge 1 makes IDs 2x stronger per completion.</li>
+<li>Infinity Challenge 2 unlocks at 1e9000 AM and has its goal reached at 1e8000 AM.</li>
+<li>Infinity Challenge 3 unlocks at 1e10500 AM.</li>
+<li>Infinity Challenge 4 raises ADs to ^1.1.</li>
+<li><b>Time Study Changes:</b></li>
+<li>Time Study 33 now keeps <i>all</i> Replicanti Galaxies on Crunch.</li>
+<li>Time Study 42 reduces the 8th Dimension requirement per galaxy to 50 Galaxies.</li>
+<li>Time Study 51 is 1e10x stronger.</li>
+<li>Time Study 61 is 10x stronger.</li>
+<li>Time Study 151 is 1e4x stronger.</li>
+<li>Break Upgrade 22 (ADx based on achievements)'s formula is improved.</li>
+</ul>
+<br>
+<br>
+A button to go to my mod's GitHub repository was added (8/31/24).
+<br>
+<br>
+<b>First Post-Patch Update</b> (8/25/24):<br>
+<ul>
+<li>Achievement 33 gives 2x IP gain.</li>
+<li>Achievement 77's reward is worded properly.</li>
+<li>Achievement 162's requirement now also includes my custom studies.</li>
+<li>Break Upgrade 23 (ADx based on worst NC time) scales 20x better and is 2x stronger (caps at 1s, 6e4).</li>
+<li>Speedrun Mode is now accessible immediately.</li>
+</ul>
+<br>
+<br>
+<b>Every change made past this point was done before the mod was released.</b>
+<br>
+<br>
+<b>Final Pre-Release Update</b> (8/24/24):<br>
+<ul>
+<li>Effarig's upgrades are all 100x cheaper, and base IP gain caps at 1e250 in Effarig's Eternity.</li>
+<li>Both autobuyer-related upgrades in Teresa's Perk Point Shop are 10x cheaper.</li>
+<li>V's Reality requirement was reduced to 1000 Realities.</li>
+<li>All AntiStellar requirements are reduced by 100 Galaxies.</li>
+<li>All Se7en deadly matters requirements are reduced by 1e1e5x Infinity Points.</li>
+<li>Time Studies 151-171 now work like the Reality perk tree. For instance, you can buy TS163 from TS171 without having TS151/152.</li>
+</ul>
+<br>
+<br>
+<b>"lots of stuff" Update</b> (8/13/24):<br>
+<ul>
+<li>Rifts drain 10% of their resource per second, and the Galaxy Generator does the same.</li>
+<li>The static divisor for Remnant gain is reduced to /1.5.</li>
+<li>The cost scaling for Memory Chunk multipliers is reduced to x10.</li>
+<li>Existentally Prolong (start with 100 Eternities) now starts you with 1,000 Eternities.</li>
+<li>Memory Chunk gain is multiplied by 100.</li>
+<li>EC1 unlocks require 10x less Eternities.</li>
+<br>
+
+<li><b>5 new Time Studies have been added.</b></li>
+<li>Time Study 112: nearly uncaps Replication chance upgrades</li>
+<li>Time Study 152: massively reduces the Replication chance upgrade cost scaling</li>
+<li>Time Study 161: applies a power to ADs based on Antimatter Galaxies</li>
+<li>Time Study 164: applies a power to IDs based on Replicanti Galaxies</li>
+<li>Time Study 241: applies a power to TDs based on Tachyon Galaxies</li>
+
+<br>
+<li>Time Study 225 gives a bonus RG for every 1e800x Replicanti.</li>
+<li>Time Study 226 gives a bonus RG for every 12 max RGs.</li>
+<li>Break Upgrades 11 and 12 (ADx based on total/current AM) no longer have their effects square-rooted.</li>
+<li>Break Upgrade 32 (unlock bulk dimboost purchases) costs 1e6 IP.</li>
+<li>Break Upgrade 33 (2x autobuyer speed) costs 1e10 IP.</li>
+<li>Break Upgrade 42 (reduce post-infinity AD cost scaling)'s cost scaling is reduced to 1e3x IP.</li>
+<li>Cosmically Duplicate scales 2x faster.</li>
+<li>Innumerably Construct scales 3x faster.</li>
+<li>The Boundless Flow is 2.5x stronger.</li>
+<li>Disparity of Rarity is ~66% stronger.</li>
+<li>Duplicity of Potency is 50% stronger.</li>
+<li>Scour to Empower only requires half the total Glyphs to unlock.</li>
+<li>Replicative Rapidity scales 6x faster.</li>
+</ul>
+<br>
+<br>
+<b>"mild changes" Update:</b> (8/6/24):<br>
+<ul>
+<li>The weaker rebuyable Pelle Upgrades were buffed:</li>
+<li>Game speed is now 2^x, Glyph level is now ^2, Infinity Power is now ^0.456.</li>
+</ul>
+<br>
+<br>
+<b>"changes 3" Update:</b> (8/6/24):<br>
+<ul>
+<li>Achievement 176 gives 10x Dark Matter/Energy.</li>
+<li>The minimum Dark Energy for a Singularity was reduced to 10 DE.</li>
+<li>Banked Infinities multiply Eternity gain.</li>
+<li>Achievements 35 and 76 are given instantly.</li>
+<li>The Multiplier Breakdown tab was removed.</li>
+<li>The console now logs "🌌 Antimatter Dimensions: undefined Update 🌌".</li>
+</ul>
+<br>
+<br>
+<b>"Second changes" Update:</b> (8/6/24):<br>
+<ul>
+<li>Imaginary Machine gain is 4x faster.</li>
+<br>
+This is a pretty long achievement list \uE010
+<br>
+<li>Achievement 11 makes ADs 100x stronger.</li>
+<li>Achievement 51 gives 4x IP gain.</li>
+<li>Achievements 77/97 make IDs 2x/6.66x stronger.</li>
+<li>Achievement 82 gives +0.1 Infinity Power conversion.</li>
+<li>Achievement 87 is 10x stronger.</li>
+<li>Achievement 101 raises AD8 to ^1.001.</li>
+<li>Achievement 108 requires you to Eternity with less than 9 Replicanti.</li>
+<li>Achievement 122 raises AD1 to ^1.008.</li>
+<li>Achievement 123 reduces the free Tickspeed upgrade threshold by -0.03.</li>
+<li>Achievement 124's requirement is met after 10 seconds.</li>
+<li>Achievement 125 only requires 1e50 IP and scales much faster (5^x instead of 2^x).</li>
+<li>Achievement 127 multiplies EP gain by log2(EP).</li>
+<li>Achievement 131 only requires 1e6 Banked Infinities, gives 2.5x more Infinities, and keeps 2x more Banked Infinities.</li>
+<li>Achievement 132's formula is buffed (1.5*(galaxies*0.1)).</li>
+<li>Achievement 136 gives 100x DT, TP, and Replicanti speed.</li>
+<li>Achievement 146 gives +10% Glyph rarity.</li>
+<li>Achievement 154 only requires a 30 second Reality and always gives 2x Realities/Perk Points.</li>
+<li>Achievement 157 improves Glyph level by 100.</li>
+<li>Achievement 158 gives 2x Black Hole power.</li>
+<li>Achievement 161 reduces the Dilation penalty by another ^1.025.</li>
+<li>Achievement 166 (or 169) only requires a Glyph level at least 6969 now.</li>
+<li>Achievement 171 is 3.33x stronger.</li>
+<li>Achievement 175 makes Momentum scale another 4x faster.</li>
+<br>
+<b>Way too many ECs were changed:</b>
+<li>EC1's goal is reduced by 1e600x, exponent factor for reward is 2x stronger</li>
+<li>EC2's reward cap is increased to 1e200x</li>
+<li>EC3's reward is now equal to completions</li>
+<li>EC4's reward cap is increased to 1e400x</li>
+<li>EC5's reward is doubled</li>
+<li>EC7's goal is reduced by 1e500x/1e350x</li>
+<li>EC8's goal scaling is reduced to 1e300x</li>
+<li>EC9's reward cap is increased to 1e1000x</li>
+<li>EC10's goal is reduced by 1e1000x/1e800x</li>
+<li>EC11 is free :blobyay:</li>
+<br>
+<b>Infinity Challenge Changes:</b>
+<li>IC3's goal is reduced to 1e4000 AM</li>
+<li>IC4's goal is reduced to 1e10000 AM, unlock reduced to 1e12000 AM</li>
+<li>IC5's goal is reduced to 1e15000 AM, unlock reduced to 1e16500 AM</li>
+<li>IC7's goal is reduced to 1e7777 AM</li>
+</ul>
+<br>
+<br>
+<b>And finally, the first change of them all:</b><br>
+<ul>
+<li>The Reality Machine cap was removed, and a super-softcap was added at 1e9000 EP.</li>
+</ul>
+<br>
+<br>
+please help this took so long to write
+
+`
+  },
   {
     date: [2024, 5, 2],
     name: "Celebrate Android Reality Update",

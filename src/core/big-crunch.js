@@ -128,9 +128,6 @@ export function bigCrunchResetValues(enteringAntimatterChallenge) {
   let remainingGalaxies = 0;
   if (Achievement(95).isUnlocked && !Pelle.isDoomed) {
     Replicanti.amount = currentReplicanti;
-    // I have to check if TS33 is bought or not so it doesn't add an extra RG.
-    // The code at the end of bigCrunchResetValues probably makes this pointless, 
-    // but as the comments there also say, it *might* be needed.
     if (!TimeStudy(33).isBought) {
       remainingGalaxies += Math.min(currentReplicantiGalaxies, 1);
     }

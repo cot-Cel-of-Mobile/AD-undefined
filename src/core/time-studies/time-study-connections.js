@@ -73,7 +73,6 @@ TimeStudy.allConnections = (function() {
     [TS(103), TS(111)],
 
     [TS(111), EC(7)],
-    // TODO before release: make sure this properly connects!
     [TS(103), TS(112)],
     [TS(111), TS(112)],
 

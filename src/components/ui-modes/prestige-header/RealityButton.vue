@@ -28,7 +28,7 @@ export default {
     },
     formatMachineStats() {
       if (!PlayerProgress.realityUnlocked() && this.nextMachineEP.gt("1e8000")) {
-        return `(Capped this Reality!)`;
+        return `(Capped this Reality?)`;
       }
       if (this.machinesGained.gt(0) && this.machinesGained.lt(100)) {
         return `(Next at ${format(this.nextMachineEP, 2)} EP)`;
@@ -86,6 +86,11 @@ export default {
         if (!PlayerProgress.realityUnlocked() && result.gte("1e6000")) {
           result = result.div("1e6000").pow(4).times("1e6000");
         }
+        if (!PlayerProgress.realityUnlocked() && result.gte("1e9000")) {
+          result = result.div("1e9000").pow(2).times("1e9000");
+        }
+        // Normally you will never see this, but in the case I change how the pre-reality text works
+        // then it's good to have this here now so I don't forget later
         return result;
       }
 

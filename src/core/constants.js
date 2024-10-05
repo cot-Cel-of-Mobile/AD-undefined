@@ -5,7 +5,6 @@ window.PRESTIGE_EVENT = {
   ETERNITY: 3,
   REALITY: 4,
 };
-// hi
 function deepFreeze(obj) {
   Object.keys(obj).forEach(prop => {
     const reference = obj[prop];

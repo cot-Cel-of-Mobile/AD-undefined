@@ -8,10 +8,9 @@ export const infinityChallenges = [
     goal: DC.E650,
     isQuickResettable: true,
     reward: {
-      description: () => `${formatX(2, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
+      description: () => `${formatX(2)} on all Infinity Dimensions for each Infinity Challenge completed`,
       effect: () => Math.pow(2, InfinityChallenges.completed.length),
-      formatEffect: value => formatX(value, 1, 1)
-      // 2x may be a little unbalanced, but isn't that a good thing for the mod?
+      formatEffect: value => formatX(value)
     },
     unlockAM: DC.E2000,
   },

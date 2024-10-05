@@ -96,7 +96,6 @@ export const normalTimeStudies = [
     requirement: [22],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Replicanti Galaxies no longer reset on Infinity"
-    // I'm going to make this keep all RGs when you crunch, though I need to make sure it doesn't break and give 1 extra RG
   },
   {
     id: 41,
@@ -115,7 +114,6 @@ export const normalTimeStudies = [
     description: () => `Antimatter Galaxy requirement increases by ${formatInt(50)}
       8th Dimensions instead of ${formatInt(60)}`,
     effect: 50
-    // This is a potentially dangerous buff to give, but WYXkk suggested to make early eternity faster
   },
   {
     id: 51,
@@ -271,7 +269,6 @@ export const normalTimeStudies = [
   {
     id: 112,
     cost: 5,
-    // TS103 also connects to TS112. Test this before releasing the mod
     requirement: [103, 111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Nearly remove the cap to Replication chance upgrades`,
@@ -419,7 +416,8 @@ export const normalTimeStudies = [
     description: () => `Massively reduce the cost scaling of Replication chance upgrades (${formatX(1e15)} ➜ ${formatX(10)})`,
     effect: 1e14
   },
-
+  // TS161 has this bug where shift-clicking lower studies after choosing passive/idle (NOT active)
+  // initially doesn't make it get purchased. This is a rather small issue, and I don't know how to fix it
   {
     id: 161,
     cost: 8,
@@ -435,7 +433,6 @@ export const normalTimeStudies = [
     id: 162,
     cost: 7,
     requirement: [151, 161, 171],
-    // I have no idea if this'll work, but it SHOULD be possible to buy TS162 with TS171 and without TS151
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `${formatX(DC.E616)} multiplier on all Antimatter Dimensions`,
     effect: () => DC.E616
@@ -444,7 +441,6 @@ export const normalTimeStudies = [
     id: 163,
     cost: 7,
     requirement: [151, 152, 164, 171],
-    // It WOULD'VE been kinda pointless to add TS152, but TS152 is connected to TS143 so you can get 161+ WITHOUT TS151
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `${formatX(1e11)} multiplier on all Infinity Dimensions`,
     effect: 1e11
@@ -456,13 +452,11 @@ export const normalTimeStudies = [
     requirement: [152, 163],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Infinity Dimensions gain a power based on Replicanti Galaxies`,
-    // Major TS164 buff: scales 6x faster and cap is at ^1.05 instead of ^1.01. It was stupid for me to cap it so low anyways...
     effect: () => 1 + player.replicanti.galaxies / 3000,
     formatEffect: value => formatPow(value, 0, 3),
     cap: 1.05
   },
 
-  // Apply r123 for TS171 if needed
   {
     id: 171,
     cost: 15,

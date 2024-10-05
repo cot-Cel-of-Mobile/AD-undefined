@@ -1,3 +1,5 @@
+import { Currency } from "../../currency";
+
 export const secretAchievements = [
   {
     id: 11,
@@ -117,8 +119,13 @@ export const secretAchievements = [
   },
   {
     id: 33,
-    name: "A sound financial decision",
-    description: "Click on the button to purchase STD coins."
+    name: "Instructions Ignored",
+    get description() {
+      return `Reality for at least ${format(100)} Reality Machines on your first Reality.`;
+    },
+    checkRequirement: () =>
+    Currency.realityMachines.value.gte(100) && Currency.realities.value == 1,
+    checkEvent: GAME_EVENT.REALITY_RESET_AFTER
   },
   {
     id: 34,

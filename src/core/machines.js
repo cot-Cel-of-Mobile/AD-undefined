@@ -19,8 +19,6 @@ export const MachineHandler = {
   get uncappedRM() {
     let log10FinalEP = player.records.thisReality.maxEP.plus(gainedEternityPoints()).log10();
     if (!PlayerProgress.realityUnlocked()) {
-      // Here we can change when pre-Reality RM is softcapped/hardcapped
-      // Original RM hardcap code:
       // if (log10Final EP > 8000) log10FinalEP = 8000;
       if (log10FinalEP > 9000) log10FinalEP -= (log10FinalEP - 9000) * 0.5;
       if (log10FinalEP > 6000) log10FinalEP -= (log10FinalEP - 6000) * 0.75;
@@ -64,7 +62,7 @@ export const MachineHandler = {
     }
   },
 
-  // Time in seconds to reduce the missing amount by a factor of two. Default is 60
+  // Time in seconds to reduce the missing amount by a factor of two. Default is 60 (15 in the mod)
   get scaleTimeForIM() {
     return 15 / ImaginaryUpgrade(20).effectOrDefault(1);
   },
